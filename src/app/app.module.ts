@@ -5,26 +5,29 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+
+import { PrincipalPage, AjustesPage, Ajustes2Page, ModalPage, TabsPage, Pagina2Page, Pagina3Page } from "../pages/index.paginas";
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    PrincipalPage, AjustesPage, Ajustes2Page, ModalPage, TabsPage, Pagina2Page, Pagina3Page
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp,{
+      backButtonText: 'Atras'
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    PrincipalPage, AjustesPage, Ajustes2Page, ModalPage, TabsPage, Pagina2Page, Pagina3Page
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule {}
+export class AppModule { }

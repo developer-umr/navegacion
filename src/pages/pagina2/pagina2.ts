@@ -1,13 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the Pagina2Page page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
+import {Pagina3Page} from "../index.paginas";
 @IonicPage()
 @Component({
   selector: 'page-pagina2',
@@ -15,11 +9,26 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class Pagina2Page {
 
+  pagina3:any=Pagina3Page;
+  mutantes:any[]=[{
+    nombre:"JEAN",
+    poder:"Psiquico"
+  },{
+    nombre:"Wolverine",
+    poder:"Regeneración acelerada"
+  },
+{
+  nombre: "Profesor X",
+  poder: "poderes Psiquicos"
+},{
+  nombre:"Tormenta",
+  poder: "Manipulación de la naturaleza"
+}]
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad Pagina2Page');
+  private irPagina3(mutante:any){
+    //console.log(mutante);
+    this.navCtrl.push(Pagina3Page, {'personaje':mutante});
   }
-
 }

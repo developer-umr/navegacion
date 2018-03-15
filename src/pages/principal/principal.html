@@ -8,11 +8,20 @@
 
   <ion-navbar>
     <ion-title>principal</ion-title>
+    <ion-buttons>
+      <button ion-button icon-only (click)="mostrarMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <!-- Esta forma podria servir para realizar mas acciones al momento de mandar a otra pagina-->
+  <button ion-button color="primary" block (click)="navegarPagina()">Pagina2</button>
+  <!-- Manda a otra pagina -->
+  <button ion-button color="secondary" block [navPush]="pagina2">Pagina2</button>
 </ion-content>
+
